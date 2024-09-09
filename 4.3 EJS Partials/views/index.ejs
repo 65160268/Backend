@@ -8,12 +8,32 @@
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/content.css">
     <title>home</title>
+    <style>
+        .btn-primary-custom {
+            background-color: #3586ff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(53, 134, 255, 0.4);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #2d6fcd;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(53, 134, 255, 0.6);
+        }
+    </style>
 </head>
 <body>
     <%- include("partials/header.ejs") %>
     <main>
-        <p>Welcome to my website.</p>
+        <h1>Welcome to my website.</h1>
     </main>
+    <a href="/about" class="btn btn-primary-custom">About Me</a>
     <%- include("partials/footer") %>
 </body>
 </html>

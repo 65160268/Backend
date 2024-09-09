@@ -28,17 +28,20 @@ app.post('/submit', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'testercode009@gmail.com', // ใส่อีเมล
-            pass: 'xqjm yuty xrnr ayrs' // ใช้รหัสผ่าน app password
+            user: 'wotpc2025@gmail.com', // ใส่อีเมล
+            pass: 'sppj esyl hftl rvsv' // ใช้รหัสผ่าน app password
         }
     });
 
     // ตั้งค่าข้อมูลอีเมล
     const mailOptions = {
-        from: 'testercode009@gmail.com', // ใส่อีเมลของผู้ส่ง
+        from: 'wotpc2025@gmail.com', // ใส่อีเมลของผู้ส่ง
         to: email, // ใช้อีเมลที่ผู้ใช้กรอกในแบบฟอร์ม
         subject: 'Thank you for contacting me!',
-        text: `Dear ${name}\n\nThank you for reaching out! We have received your comment:,\n\n"${comment}"\n\nKAi SO BIG`
+        text: `Dear ${name}\n\nThank you for reaching out! We have received your comment:,\n\n"${comment}"\n
+        \n Best Regards, 
+        \n Sorrawit Srisuk, 
+        \n EJS Partials`
     };
 
     // ส่งอีเมล
