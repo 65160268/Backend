@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/content.css">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            margin: 60px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        .profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-description {
+            max-width: 700px;
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary-custom {
+            background-color: #3586ff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(53, 134, 255, 0.4);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #2d6fcd;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(53, 134, 255, 0.6);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color: #3586ff;
+            font-size: 1.8em;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f8b400;
+            transform: scale(1.2);
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <main class="container">
+        <section class="profile-section">
+            <img class="profile" src="images/unnamed.jpg" alt="Profile Image">
+            <p class="profile-description">
+                สวัสดีครับ ผมชื่อ นายภูริพัฒน์ ลครไทย ตอนนี้ผมกำลังเรียนอยู่ที่มหาวิทยาลัยบูรพาและอยู่ในช่วงเตรียมพร้อมสำหรับการฝึกงานสหกิจ 
+                เพื่อที่จะสามารถจบการศึกษาได้ตามแผน ผมมีความรู้และทักษะพื้นฐานในการเขียนโปรแกรมสำหรับพัฒนาเว็บไซต์ 
+                โดยเฉพาะอย่างยิ่งในด้าน HTML, CSS, JavaScript, PHP และ Node.js นอกจากนี้ 
+            </p>
+            <p class="profile-description">ผมยังอยู่ในระหว่างการศึกษาการใช้งาน React.js และ Next.js เพื่อเพิ่มทักษะและความสามารถในการพัฒนาเว็บไซต์ที่ทันสมัยและตอบสนองความต้องการของผู้ใช้งานได้ดียิ่งขึ้น
+                การฝึกงานสหกิจเป็นโอกาสที่ดีสำหรับผมที่จะได้เรียนรู้และพัฒนาทักษะของตนเองในสภาพแวดล้อมการทำงานจริง ผมพร้อมที่จะนำความรู้และทักษะของผมมาใช้ให้เกิดประโยชน์กับองค์กร และยินดีที่จะเรียนรู้เพิ่มเติมจากประสบการณ์ในการทำงาน</p>
+            <a href="/contact" class="btn btn-primary-custom">Contact Me</a>
+        </section>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>
