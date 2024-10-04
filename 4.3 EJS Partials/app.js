@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
