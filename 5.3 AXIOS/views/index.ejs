@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css">
+    <title>I'm Bored</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>มาค้นหากิจกรรมที่น่าสนใจกันเถอะ</h1>
+
+        <form action="/" id="form" class="form" method="POST">
+            <select name="type" class="form-select">
+                <option value="" data-display="Select">ประเภทกิจกรรม</option>
+                <option value="education">การศึกษา</option>
+                <option value="charity">การกุศล</option>
+                <option value="recreational">การสร้างสรรค์สิ่งใหม่ๆ</option>
+                <option value="relaxation">การผ่อนคลาย</option>
+                <option value="busywork">ทำงานยุ่งๆ</option>
+                <option value="social">การเข้าสังคม</option>
+                <option value="diy">การลงมือทำด้วยตนเอง</option>
+                <option value="music">ฟังเพลง</option>
+            </select>
+            <select name="participants" class="form-select">
+                <option value="">จำนวนผู้เข้าร่วม</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <button type="submit" class="form-submit">ค้นหา</button>
+        </form>
+        <section id="cards" class="cards">
+            <article class="card-item">
+                <h2 class="card-activity">
+                    <!-- Show Activity -->
+                    <% if(locals.data){ %>
+                        <%= data.activity %>
+                            <% }else{ %>
+
+                                <% } %>
+
+                </h2>
+                <div class="card-info">
+                    <span class="card-type">
+                        <!-- Show Activity type -->
+                        <% if(locals.data){ %>
+                            <%= data.type %>
+                                <% }else{ %>
+
+                                    <% } %>
+
+                    </span>
+
+                    <br>
+
+                    <span class="card-participants">
+                        <!-- participants: Show participant number -->
+                        <% if(locals.data){ %>
+                            <p>participant:<%= data.participants %>
+                            </p>
+                            <% }else{ %>
+
+                                <% } %>
+                                    <span class="card-number"></span>
+                    </span>
+                </div>
+            </article>
+
+            <br>
+
+        </section>
+        <div id="tag-error" class="tag-error">
+            <!-- Show any errors that were sent from the backend -->
+            <% if(locals.error){ %>
+                <div>
+                    <p>ไม่มีกิจกรรมที่ตรงตามเกณฑ์ที่กําหนดในขณะนี้</p>
+                </div>
+                <% }else{%>
+
+                    <% } %>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
