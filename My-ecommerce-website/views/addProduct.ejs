@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="container mt-4">
+            <h2>เพิ่มสินค้าใหม่</h2>
+            <form action="/products/add" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">ชื่อสินค้า:</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">ราคา:</label>
+                    <input type="number" name="price" id="price" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">คำอธิบาย:</label>
+                    <textarea name="description" id="description" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">รูปภาพสินค้า:</label>
+                    <input type="file" name="image" id="image" class="form-control-file" required>
+                </div>
+                <button type="submit" class="btn btn-primary">เพิ่มสินค้า</button>
+            </form>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
+

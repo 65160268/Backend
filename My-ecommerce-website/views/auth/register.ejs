@@ -1,0 +1,33 @@
+<!-- views/auth/register.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>สมัครสมาชิก</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h3 class="text-center">สมัครสมาชิก</h3>
+                <form action="/auth/register" method="POST">
+                    <div class="form-group">
+                        <label>ชื่อผู้ใช้:</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>รหัสผ่าน:</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">สมัครสมาชิก</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

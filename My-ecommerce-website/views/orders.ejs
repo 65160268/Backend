@@ -1,0 +1,45 @@
+<!-- views/orders.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- เพิ่มไฟล์ CSS ของเทมเพลต -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/css/swiper.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="container mt-4">
+      <h2>รายการสั่งซื้อของคุณ</h2>
+      <% if (orders.length > 0) { %>
+        <% orders.forEach(function(order) { %>
+          <div class="card mb-3">
+            <div class="card-header">
+              หมายเลขคำสั่งซื้อ: <%= order.id %> | สถานะ: <%= order.status %> | วันที่: <%= new Date(order.created_at).toLocaleDateString() %>
+            </div>
+            <div class="card-body">
+              <p>ยอดรวม: <%= order.total %> บาท</p>
+              <!-- สามารถเพิ่มรายละเอียดเพิ่มเติม เช่น รายการสินค้าในคำสั่งซื้อ -->
+              <% 
+                // เพิ่มรายละเอียดสินค้าในคำสั่งซื้อ
+                const orderItems = []; 
+                // Assuming you have a way to get order items, e.g., querying the database
+                // This is just a placeholder example
+              %>
+              <% /* คุณสามารถปรับปรุงโค้ดนี้ให้ดึงข้อมูล order_items จากฐานข้อมูล */ %>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>คุณยังไม่มีรายการสั่งซื้อ</p>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

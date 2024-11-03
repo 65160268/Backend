@@ -1,0 +1,60 @@
+<!-- views/cart.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- เพิ่มไฟล์ CSS ของเทมเพลต -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/css/swiper.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="container mt-4">
+      <h2>ตะกร้าสินค้า</h2>
+      <% if (cartItems.length > 0) { %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>สินค้า</th>
+              <th>ราคา</th>
+              <th>จำนวน</th>
+              <th>รวม</th>
+              <th>การดำเนินการ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% cartItems.forEach(function(item) { %>
+              <tr>
+                <td><%= item.product.name %></td>
+                <td><%= item.product.price %> บาท</td>
+                <td>
+                  <form action="/cart/update/<%= item.product.id %>" method="POST" class="form-inline">
+                    <input type="number" name="quantity" value="<%= item.quantity %>" min="1" class="form-control mr-2" style="width: 80px;">
+                    <button type="submit" class="btn btn-primary btn-sm">อัพเดท</button>
+                  </form>
+                </td>
+                <td><%= item.product.price * item.quantity %> บาท</td>
+                <td>
+                  <form action="/cart/remove/<%= item.product.id %>" method="POST">
+                    <button type="submit" class="btn btn-danger btn-sm">ลบ</button>
+                  </form>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <h3>ยอดรวม: <%= total %> บาท</h3>
+        <a href="/orders/checkout" class="btn btn-success">สั่งซื้อ</a>
+      <% } else { %>
+        <p>ตะกร้าสินค้าของคุณว่างเปล่า</p>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

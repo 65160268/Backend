@@ -1,0 +1,204 @@
+/* public/assets/css/index.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #13213b;
+}
+
+/* Banner Section */
+.banner_section {
+    background: #f38d20;
+    padding: 80px 0;
+}
+
+.banner_title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #343a40;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner_text {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.shop_now_bt a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #c23111;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.shop_now_bt a:hover {
+    background-color: #0056b3;
+}
+
+.banner_image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Featured Products Section */
+.product_section {
+    background-color: #ffffff;
+    padding: 0px 0;
+}
+
+.product_section h2 {
+    font-size: 36px;
+    color: #343a40;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #c23111;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer_section {
+    background-color: #13213b;
+}
+
+.footer_section h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer_section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_section ul li {
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+.footer_section ul li i {
+    margin-right: 10px;
+    color: #343a40;
+}
+
+.footer_section a {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.footer_section a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer_section .fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.footer_section .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .banner_title {
+        font-size: 36px;
+    }
+
+    .banner_text {
+        font-size: 16px;
+    }
+
+    .product_section h2 {
+        font-size: 28px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner_title {
+        font-size: 28px;
+    }
+
+    .banner_text {
+        font-size: 14px;
+    }
+
+    .shop_now_bt a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

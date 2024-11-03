@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+              <h2>ชำระเงิน</h2>
+            </div>
+            <div class="card-body">
+              <h3 class="text-center">ยอดรวม: <strong><%= total %> บาท</strong></h3>
+              <form action="/orders/checkout" method="POST" class="text-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg">
+                  <i class="fas fa-check-circle"></i> ยืนยันการสั่งซื้อ
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <%- include('partials/footer') %>
+  
+  <!-- JavaScript Files -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

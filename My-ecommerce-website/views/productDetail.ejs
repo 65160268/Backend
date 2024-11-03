@@ -1,0 +1,41 @@
+<!-- views/productDetail.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- เพิ่มไฟล์ CSS ของเทมเพลต -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/css/swiper.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="container mt-4">
+      <h2><%= product.name %></h2>
+      <% if (product.image) { %>
+        <img src="<%= product.image %>" class="img-fluid mb-3" alt="<%= product.name %>">
+      <% } else { %>
+        <img src="/assets/images/default-product.jpg" class="img-fluid mb-3" alt="<%= product.name %>">
+      <% } %>
+      <p><%= product.description %></p>
+      <p>ราคา: <%= product.price %> บาท</p>
+      <% if (user) { %>
+        <form action="/cart/add/<%= product.id %>" method="POST">
+          <div class="form-group">
+            <label>จำนวน:</label>
+            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 100px;">
+          </div>
+          <button type="submit" class="btn btn-success">เพิ่มในตะกร้า</button>
+        </form>
+      <% } else { %>
+        <p><a href="/auth/login">เข้าสู่ระบบ</a> เพื่อซื้อสินค้า</p>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
